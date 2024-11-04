@@ -28,6 +28,7 @@
         const response = await fetch(`http://localhost:3000/weather?city=${city}`);
         const data = await response.json();
         document.getElementById('weatherResult').innerHTML = `
+          <p>City: ${city}</p>
           <p>Temperature: ${(data.main.temp - 273.15).toFixed(2)} °C</p>
           <p>Weather: ${data.weather[0].description}</p>
         `;
