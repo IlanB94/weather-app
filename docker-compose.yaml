@@ -2,7 +2,7 @@ services:
   backend:
     build: /backend
     environment:
-      - WEATHER_API_KEY=79f6e969ab6ec49baa65d9f36f6b4071
+      - WEATHER_API_KEY=<YOUR_API_KEY>
     ports:
       - "3000:3000"
   
