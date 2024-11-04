@@ -19,9 +19,11 @@ A simple weather dashboard application that allows users to get real-time weathe
 git clone https://github.com/your-username/weather-dashboard.git
 cd weather-dashboard
 ```
+cd weather-dashboard
+
 
 ### 2. Set Up Environment Variable
-Replace **YOUR_API_KEY** in the docker-compose.yml file with your actual API key from OpenWeatherMap:
+Replace **YOUR_API_KEY** in the docker-compose.yml file with your actual API key from [OpenWeatherMap](https://openweathermap.org/):
 
 ```
 services:
@@ -50,12 +52,18 @@ This command will:
 Once the containers are running, open your browser and go to http://localhost:8080 to use the Weather Dashboard.
 
 ### Commands Build and Run Containers
+
+## Build and Run Containers
 ```
 docker-compose up --build
 ```
+
+## Stop Containers
 ```
 docker-compose down
 ```
+
+## View Running Containers
 ```
 docker ps
 ```
