@@ -1,12 +1,19 @@
-// backend/app.js
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 3000;
-const apiKey = process.env.WEATHER_API_KEY;
 
-app.use(cors()); // Enable CORS for frontend communication
+// Read API key from Docker secret or environment variable
+let apiKey;
+try {
+  apiKey = fs.readFileSync('/run/secrets/weather_api_key', 'utf-8').trim();
+} catch (error) {
+  apiKey = process.env.WEATHER_API_KEY;
+}
+
+app.use(cors());
 
 app.get('/weather', async (req, res) => {
   const { city } = req.query;

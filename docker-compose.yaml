@@ -1,13 +1,22 @@
+version: '3.8'
+
 services:
   backend:
-    build: /backend
+    build:
+      context: ./backend
     environment:
-      - WEATHER_API_KEY=<YOUR_API_KEY>
+      - WEATHER_API_KEY=/run/secrets/weather_api_key
     ports:
       - "3000:3000"
-  
+    secrets:
+      - weather_api_key
+
   frontend:
-    build: /frontend
+    build:
+      context: ./frontend
     ports:
-      - "8080:80"
-      
+      - "8081:80"
+
+secrets:
+  weather_api_key:
+    file: ./api_key.txt
