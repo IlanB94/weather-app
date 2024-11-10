@@ -16,7 +16,7 @@ A simple weather dashboard application that allows users to get real-time weathe
 ### 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/weather-dashboard.git
+git clone https://github.com/IlanB94/weather-app.git
 cd weather-dashboard
 ```
 
